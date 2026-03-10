@@ -1,4 +1,8 @@
 {
-  "build": {"builder": "NIXPACKS"},
-  "deploy": {"startCommand": "npx openclaw@latest gateway --port ${PORT:-8080}"}
+  "build": {
+    "builder": "DOCKERFILE"
+  },
+  "deploy": {
+    "startCommand": "openclaw gateway --port $PORT"
+  }
 }
