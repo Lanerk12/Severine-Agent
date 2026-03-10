@@ -1,8 +1,5 @@
 {
   "build": {
     "builder": "DOCKERFILE"
-  },
-  "deploy": {
-    "startCommand": "openclaw gateway --port $PORT"
   }
 }
