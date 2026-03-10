@@ -4,5 +4,5 @@ RUN corepack enable && npm install -g openclaw@latest npm@latest
 RUN npx openclaw@latest init --yes --data /data
 WORKDIR /data
 COPY . .
-EXPOSE 3000
-CMD ["openclaw", "gateway", "--port", "3000"]
+EXPOSE $PORT
+CMD ["sh", "-c", "openclaw gateway --port ${PORT:-3000}"]
