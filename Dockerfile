@@ -3,4 +3,4 @@ RUN apk add --no-cache git
 WORKDIR /app
 COPY . .
 EXPOSE $PORT
-CMD ["npx", "openclaw@latest", "gateway", "--port", "$PORT", "--data", "/data"]
+CMD sh -c "npx openclaw@latest gateway --port \${PORT:-8080} --data /data"
