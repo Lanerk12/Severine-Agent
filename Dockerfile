@@ -4,4 +4,4 @@ WORKDIR /app
 COPY . .
 ENV PORT=3000
 EXPOSE $PORT
-CM
+CMD ["npx", "openclaw@latest", "gateway", "--port", "$PORT"]
