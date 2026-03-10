@@ -12,7 +12,8 @@
   "channels": {
     "telegram": {
       "enabled": true,
-      "dmPolicy": "open"
+      "dmPolicy": "open",
+      "allowFrom": ["*"]
     }
   }
 }
