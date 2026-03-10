@@ -6,18 +6,11 @@
   "agents": {
     "defaults": {
       "model": "openai/gpt-4o"
-    },
-    "list": [
-      {
-        "id": "severine",
-        "model": "openai/gpt-4o"
-      }
-    ]
+    }
   },
   "channels": {
     "telegram": {
       "enabled": true,
-      "token": "${TELEGRAM_TOKEN}",
       "dmPolicy": "allowAll"
     }
   }
