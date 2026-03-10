@@ -1,11 +1,11 @@
 {
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "NIXPACKS",
+    "nixpacksPlan": {
+      "providers": ["node.js->node:22"]
+    }
   },
   "deploy": {
-    "startCommand": "npx openclaw@latest gateway --port ${PORT:-8080}",
-    "nixpacks": {
-      "providers": ["node.js"]
-    }
+    "startCommand": "npx openclaw@latest gateway --port ${PORT:-8080}"
   }
 }
