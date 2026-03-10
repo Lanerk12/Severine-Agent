@@ -22,7 +22,11 @@
     "mappings": [
       {
         "id": "stripe",
-        "match": { "path": "stripe" }
+        "match": { "path": "stripe" },
+        "auth": {
+          "kind": "stripe-signature",
+          "secret": "${STRIPE_WEBHOOK_SECRET}"
+        }
       }
     ]
   }
