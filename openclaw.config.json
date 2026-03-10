@@ -18,6 +18,7 @@
   },
   "hooks": {
     "enabled": true,
+    "token": "${OPENCLAW_HOOKS_TOKEN}",
     "mappings": [
       {
         "id": "stripe",
