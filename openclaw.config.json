@@ -6,7 +6,7 @@
   "agents": {
     "defaults": {
       "model": "anthropic/claude-opus-4-6",
-      "workspace": "/data"
+      "workspace": "/root/.openclaw"
     }
   },
   "channels": {
@@ -15,5 +15,14 @@
       "dmPolicy": "open",
       "allowFrom": ["*"]
     }
+  },
+  "hooks": {
+    "enabled": true,
+    "mappings": [
+      {
+        "id": "stripe",
+        "match": { "path": "stripe" }
+      }
+    ]
   }
 }
