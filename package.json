@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "start": "npx openclaw@latest gateway --port $PORT"
+    "start": "npx openclaw@latest gateway --port ${PORT:-8080}"
   }
 }
