@@ -1,6 +1,7 @@
 FROM node:22-alpine
 RUN apk add --no-cache git
+RUN npm install -g openclaw@latest
 WORKDIR /app
 COPY . .
 EXPOSE $PORT
-CMD sh -c "npx openclaw@latest gateway --port \${PORT:-8080} --data /data"
+CMD ["openclaw", "gateway", "--port", "$PORT", "--data", "/data"]
