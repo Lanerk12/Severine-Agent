@@ -5,12 +5,14 @@
   },
   "agents": {
     "defaults": {
-      "model": "openai/gpt-4o"
+      "model": "anthropic/claude-opus-4-6",
+      "workspace": "/data"
     }
   },
   "channels": {
     "telegram": {
       "enabled": true,
+      "token": "${TELEGRAM_BOT_TOKEN}",
       "dmPolicy": "allowAll"
     }
   }

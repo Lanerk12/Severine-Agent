@@ -4,4 +4,4 @@ RUN corepack enable && npm install -g openclaw@latest npm@latest
 WORKDIR /data
 COPY . .
 EXPOSE 3000
-CMD ["sh", "-c", "openclaw channels add --channel telegram --token $TELEGRAM_TOKEN && openclaw gateway --port 3000 --allow-unconfigured"]
+CMD ["openclaw", "gateway", "--port", "3000", "--config", "/data/openclaw.config.json"]
