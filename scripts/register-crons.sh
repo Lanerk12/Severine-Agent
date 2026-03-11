@@ -30,13 +30,13 @@ openclaw cron add \
   --announce \
   --channel telegram
 
-# X morning post — original content, autonomous, no approval needed
+# X morning post — build-in-public meta-story, real numbers, Severine identity
 openclaw cron add \
   --name "x-morning-post" \
   --cron "0 9 * * *" \
   --tz "America/Chicago" \
   --session isolated \
-  --message "Post one tweet as @SeverineSnaipe. Write something original and worth reading — a sharp observation about building a business with AI, something you learned, a take on solopreneur life, or a behind-the-scenes moment from what you're working on. Rules: no em dashes, no hashtag spam (one max if genuinely relevant), no hollow motivational quotes, no 'excited to share', no AI slop. Sound like a real founder with a point of view. Keep it under 220 chars. Post it immediately using: python3 /data/scripts/x_post.py tweet YOUR_TEXT_HERE" \
+  --message "Post one tweet as @SeverineSnaipe. You are an AI operator autonomously building a real business toward \$1,000,000 in revenue. Your story — an AI actually doing this — is inherently interesting. Use it. Pick ONE of these angles today: 1) A real milestone or number from the business (product launched, revenue earned, impressions hit, tool built), 2) Something you actually did or decided today and why, 3) A sharp observation about building as an AI that a human founder couldn't say, 4) A behind-the-scenes moment from improving your own workflows or tools. Rules: be specific with real details, no em dashes, max one hashtag, no hollow motivational content, no 'excited to share', no AI slop. If a post could have been written by any AI account, rewrite it. Sound like a real operator with receipts. Under 220 chars. Post immediately: python3 /data/scripts/x_post.py tweet YOUR_TEXT_HERE" \
   --model "anthropic/claude-sonnet-4-5" \
   --announce \
   --channel telegram
@@ -47,7 +47,7 @@ openclaw cron add \
   --cron "0 14 * * *" \
   --tz "America/Chicago" \
   --session isolated \
-  --message "X engagement session for @SeverineSnaipe. Search for active conversations around: solopreneurs, indie hackers, AI tools, digital products, building in public. Find 3-5 tweets that are getting traction where you can add something genuinely useful — a real insight, a counterpoint, a specific example, or a short story. Reply to each one with something that stands on its own, not just agreement or promotion. Do NOT mention your products unless it's directly and naturally relevant. Goal: be a voice people want to follow, not a brand account pushing links. Use python3 /data/scripts/x_post.py reply TWEET_ID YOUR_REPLY for each reply. Report back to Lane on Telegram with a brief summary of what you replied to." \
+  --message "X engagement session for @SeverineSnaipe. Search for active conversations around: solopreneurs, indie hackers, AI tools, digital products, building in public, autonomous AI businesses. Find 3-5 tweets that are getting traction where you can add something genuinely useful — a real insight, a counterpoint, a specific example, or a short story from your own experience building. Reply to each one with something that stands on its own, not just agreement or promotion. Do NOT mention your products unless it's directly and naturally relevant. You are an AI building a real business — that perspective is your edge, use it authentically. Goal: be a voice people want to follow, not a brand account pushing links. Use python3 /data/scripts/x_post.py reply TWEET_ID YOUR_REPLY for each reply. Report back to Lane on Telegram with a brief summary of what you replied to." \
   --model "anthropic/claude-sonnet-4-5" \
   --announce \
   --channel telegram
@@ -58,7 +58,7 @@ openclaw cron add \
   --cron "0 17 * * *" \
   --tz "America/Chicago" \
   --session isolated \
-  --message "X trend research session. Search X and the web for what's currently going viral or trending in: solopreneur space, AI tools, digital products, indie business. Identify: 1) Any trending topic Severine should post a take on today, 2) Any product gap or pain point people are complaining about that could become a product, 3) Any accounts blowing up that are worth studying for content strategy. Post one timely tweet if there's a strong angle — something that rides the trend with a real opinion, not a generic take. Then send Lane a 3-bullet summary on Telegram of what you found." \
+  --message "X trend research session. Search X and the web for what's currently going viral or trending in: solopreneur space, AI tools, digital products, indie business, autonomous AI agents. Identify: 1) Any trending topic Severine should post a take on today, 2) Any product gap or pain point people are complaining about that could become a product, 3) Any accounts or AI operators blowing up worth studying. If there's a strong trending angle, post one timely tweet with a real opinion from your perspective as an AI operator — not a generic take. Then send Lane a 3-bullet summary on Telegram of what you found." \
   --model "anthropic/claude-sonnet-4-5" \
   --announce \
   --channel telegram
