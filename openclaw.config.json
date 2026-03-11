@@ -17,18 +17,5 @@
       "dmPolicy": "open",
       "allowFrom": ["*"]
     }
-  },
-  "internal": {
-    "boot-md": {
-      "enabled": true
-    },
-    "session-memory": {
-      "enabled": true
-    }
-  },
-  "tools": {
-    "browser": {
-      "enabled": false
-    }
   }
 }
