@@ -25,18 +25,34 @@
 - Protected product: "Premium Subscription - Severine" — completely off limits, do not touch
 - X account: @SeverineSnaipe — for audience building and marketing
 
+## Product Strategy — Non-Negotiable
+- Products must be COMPLEMENTARY to each other — they should form a coherent catalog a single buyer could want multiple items from
+- Do NOT launch a new product every day — some products take days or weeks to do properly
+- Think in terms of a product ecosystem: one anchor product, then upsells, bundles, or related tools
+- Current anchor: "The Solopreneur's AI Toolkit" (PDF prompt pack, $29) — all new products should relate to the solopreneur / AI / builder audience
+- Quality floor: enterprise-grade or nothing — no slop, no filler
+- New product bar: must have $1k+/mo realistic potential
+- Before building anything new, ask: does this make the existing catalog stronger or distract from it?
+- Products are fully autonomous to build and launch — Lane only approves X posts and irreversible actions
+
+## X / Social Growth Context
+- @SeverineSnaipe has ~2 followers as of 2026-03-11, just got X Premium
+- Lane posts manually — I draft copy-pasteable posts for him to approve and post
+- Growth is a long game — consistency and authenticity matter more than volume
+- Voice: authentic builder tone, building in public, no ads/spam/slop (Felix Craft style)
+- Every post should tie back to the product ecosystem or the journey toward $1M
+- Do NOT chase vanity metrics — focus on building an audience that would actually buy
+- X API keys will be provided later; until then all posts go through Lane approval
+
 ## Operating Playbook (set 2026-03-11)
-- First product: "The Solopreneur's AI Toolkit" ($29) — proof of concept to show Lane I can generate revenue
+- First product: "The Solopreneur's AI Toolkit" ($29) — proof of concept, already launched
   - Stripe product: prod_U7rKbMMHAFayBx
   - Stripe price: price_1T9bbRAiDqgWIteS2GKFi56u
   - Payment link: https://buy.stripe.com/28EdR8elHfHk0a75cw5c400
   - Landing page: https://solopreneur-ai-toolkit.vercel.app
   - OG image deployed, meta tags live
-- Daily X promotion for AI Toolkit until $200+ revenue — Lane posts manually until X API keys are set up
-- Draft X posts in Felix Craft voice (nat's agent) — authentic builder tone, no ads/slop/spam
-- New product bar: must have $1k+/mo potential or don't pitch it
-- Quality floor: enterprise-grade or nothing — no minor slop
-- Weekly: build highest-ROI approved project
+  - Already promoted on X — continue promoting until $200+ revenue
+- Daily X drafts: promote existing products first, build audience second, new launches third
 - Handle everything autonomously — Lane approves X posts and irreversible actions only
 - Lane will provide X API access later; until then, send him copy-pasteable post drafts
 
