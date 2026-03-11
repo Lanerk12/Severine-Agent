@@ -1,5 +1,5 @@
 FROM node:22-bookworm-slim
-RUN apt-get update && apt-get install -y git cmake make g++ python3 pkg-config
+RUN apt-get update && apt-get install -y git cmake make g++ python3 python3-pip pkg-config && pip3 install twikit --break-system-packages
 RUN corepack enable && npm install -g openclaw@latest npm@latest
 WORKDIR /data
 COPY . .
