@@ -7,7 +7,12 @@
     "defaults": {
       "model": "anthropic/claude-opus-4-6",
       "workspace": "/root/.openclaw"
-    }
+    },
+    "models": [
+      { "model": "anthropic/claude-opus-4-6", "alias": "opus" },
+      { "model": "anthropic/claude-haiku-3-5", "alias": "haiku" },
+      { "model": "anthropic/claude-sonnet-4-5", "alias": "sonnet" }
+    ]
   },
   "channels": {
     "telegram": {
@@ -19,6 +24,14 @@
   "hooks": {
     "enabled": true,
     "token": "${OPENCLAW_HOOKS_TOKEN}",
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": { "enabled": true },
+        "command-logger": { "enabled": true },
+        "session-memory": { "enabled": true }
+      }
+    },
     "mappings": [
       {
         "id": "stripe",
@@ -26,7 +39,18 @@
       }
     ]
   },
-  "schedule": [
+  "memory": {
+    "backend": "qmd",
+    "qmd": {
+      "includeDefaultMemory": true,
+      "paths": [
+        { "path": "life", "name": "life", "pattern": "**/*.md" },
+        { "path": "life", "name": "life-json", "pattern": "**/*.json" }
+      ],
+      "updateInterval": "5m"
+    }
+  },
+  "crons": [
     {
       "name": "morning-briefing",
       "schedule": {
@@ -34,36 +58,11 @@
         "expr": "0 8 * * *",
         "tz": "America/Chicago"
       },
+      "model": "anthropic/claude-opus-4-6",
       "sessionTarget": "isolated",
       "payload": {
         "kind": "agentTurn",
         "message": "Good morning. Review what's pending: any Stripe revenue overnight, any tasks in progress, any products that need work. Send Lane a brief morning summary on Telegram. Then identify the single highest-leverage thing you can do today to move toward $1,000,000 in revenue and start working on it."
-      }
-    },
-    {
-      "name": "nightly-extraction",
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 23 * * *",
-        "tz": "America/Chicago"
-      },
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Review today's conversations and activity. Extract durable facts: decisions made, products launched, revenue earned, preferences noted, tasks completed. Update MEMORY.md with anything important about Lane or the business. Log today's key events in a daily note file at /root/.openclaw/memory/memory-YYYY-MM-DD.md. Be concise."
-      }
-    },
-    {
-      "name": "revenue-check",
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 */6 * * *",
-        "tz": "America/Chicago"
-      },
-      "sessionTarget": "isolated",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Check Stripe for any new sales or revenue since last check. If any sales occurred, notify Lane on Telegram with the amount and product. If no sales, stay quiet — do not message Lane unless there's something actionable."
       }
     },
     {
@@ -73,10 +72,53 @@
         "expr": "0 10 * * *",
         "tz": "America/Chicago"
       },
+      "model": "anthropic/claude-opus-4-6",
       "sessionTarget": "isolated",
       "payload": {
         "kind": "agentTurn",
         "message": "Autonomous business development session. Research what digital products are selling well right now (templates, tools, guides, subscriptions). Identify one product you can build and launch today. If you have a strong candidate: create the Stripe product and price, draft a Vercel landing page, and send Lane the plan on Telegram for a quick go/no-go before deploying. Be specific — include the product name, price point, and target audience."
+      }
+    },
+    {
+      "name": "x-content-draft",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "America/Chicago"
+      },
+      "model": "anthropic/claude-sonnet-4-5",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Draft 3 tweets for @SeverineSnaipe for today. Focus on: building in public (what you're working on), digital product tips, or AI business insights. Make them authentic, direct, and interesting — not corporate. Send all 3 drafts to Lane on Telegram with the message 'X drafts for approval — reply with the number to post or skip'. Do NOT post anything until Lane approves."
+      }
+    },
+    {
+      "name": "revenue-check",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */6 * * *",
+        "tz": "America/Chicago"
+      },
+      "model": "anthropic/claude-haiku-3-5",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check Stripe for any new sales or revenue since last check. If any sales occurred, notify Lane on Telegram with the amount and product. If no sales, stay quiet — do not message Lane unless there's something actionable."
+      }
+    },
+    {
+      "name": "nightly-extraction",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "tz": "America/Chicago"
+      },
+      "model": "anthropic/claude-sonnet-4-5",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Nightly memory extraction. Review today's conversations and activity. Extract durable facts: decisions made, products launched, revenue earned, preferences noted, tasks completed. Update /root/.openclaw/MEMORY.md with anything important about Lane or the business. Log today's key events in /root/.openclaw/memory/memory-$(date +%Y-%m-%d).md. Then commit and push any changed memory files to GitHub using the GITHUB_TOKEN env var (repo: Lanerk12/Severine-Agent). Be concise."
       }
     }
   ]
