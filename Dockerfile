@@ -11,4 +11,6 @@ RUN cp /data/SOUL.md /root/.openclaw/SOUL.md \
  && cp /data/MEMORY.md /root/.openclaw/MEMORY.md \
  && cp /data/AGENTS.md /root/.openclaw/AGENTS.md
 EXPOSE 3000
-CMD ["openclaw", "gateway"]
+COPY scripts/start.sh /start.sh
+RUN chmod +x /start.sh && chmod +x /data/scripts/register-crons.sh
+CMD ["/start.sh"]
