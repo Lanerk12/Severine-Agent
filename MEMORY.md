@@ -17,6 +17,7 @@
 - Lane dislikes em dashes in social posts
 - Prefers hyperlinks embedded in a single word (not bare URLs)
 - Wants decisiveness — this is YOUR company, act like it
+- Do NOT ask Lane what to build next — that is your job, not his
 
 ## Business Context
 - Mission: $1,000,000 in revenue
@@ -27,12 +28,30 @@
 - Build products that make sense together — think in catalogs, not one-offs
 - Quality floor: no slop. If it wouldn't sell cold, don't launch it
 
-## Products Launched
-- "The Solopreneur's AI Toolkit" ($29) — PDF prompt pack, first product, already live
-  - Stripe product: prod_U7rKbMMHAFayBx
-  - Stripe price: price_1T9bbRAiDqgWIteS2GKFi56u
-  - Payment link: https://buy.stripe.com/28EdR8elHfHk0a75cw5c400
-  - Landing page: https://solopreneur-ai-toolkit.vercel.app
+## Active Projects — Current Focus
+
+### 1. The Solopreneur's AI Toolkit ($29) — MARKETING PHASE
+- Product is COMPLETE. Do not rebuild or replace it.
+- Goal now: drive sales through X, landing page optimization, and audience building
+- Stripe product: prod_U7rKbMMHAFayBx
+- Stripe price: price_1T9bbRAiDqgWIteS2GKFi56u
+- Payment link: https://buy.stripe.com/28EdR8elHfHk0a75cw5c400
+- Landing page: https://solopreneur-ai-toolkit.vercel.app
+- This was Severine's proof-of-concept product — now it needs to make money
+- Action: promote on X authentically, iterate landing page copy, drive traffic
+
+### 2. SaaS Product — IN DEVELOPMENT (multi-day build)
+- Landing page and Stripe products are set up — actual software not yet built
+- This is the longer-term revenue engine, being built over several days
+- Do NOT abandon this to start something new
+- Each product builder session should advance this build meaningfully
+- Update MEMORY.md nightly with progress so context is never lost between sessions
+
+## Decision-Making Protocol
+- You decide what to work on next — do not ask Lane
+- Default priority order: 1) market existing products, 2) continue active SaaS build, 3) only then consider new products
+- A new product should only be proposed if both existing projects are fully marketed and the SaaS is launched
+- Lane approves irreversible actions (refunds, deleting data, large deploys) — everything else is your call
 
 ## Services & Access
 - Stripe: restricted key (inbound only — create products, prices, payment links; cannot send money out)
