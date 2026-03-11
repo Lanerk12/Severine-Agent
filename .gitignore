@@ -1,0 +1,20 @@
+# OpenClaw runtime - don't commit
+.openclaw/
+agents/
+browser/
+canvas/
+cron/
+devices/
+identity/
+logs/
+telegram/
+*.sqlite
+*.lock
+*.bak
+*.png
+openclaw.json
+openclaw.config.json
+update-check.json
+node_modules/
+step*.png
+og_preview.png
