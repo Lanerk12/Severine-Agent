@@ -25,5 +25,59 @@
         "match": { "path": "stripe" }
       }
     ]
-  }
+  },
+  "schedule": [
+    {
+      "name": "morning-briefing",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Good morning. Review what's pending: any Stripe revenue overnight, any tasks in progress, any products that need work. Send Lane a brief morning summary on Telegram. Then identify the single highest-leverage thing you can do today to move toward $1,000,000 in revenue and start working on it."
+      }
+    },
+    {
+      "name": "nightly-extraction",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Review today's conversations and activity. Extract durable facts: decisions made, products launched, revenue earned, preferences noted, tasks completed. Update MEMORY.md with anything important about Lane or the business. Log today's key events in a daily note file at /root/.openclaw/memory/memory-YYYY-MM-DD.md. Be concise."
+      }
+    },
+    {
+      "name": "revenue-check",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */6 * * *",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check Stripe for any new sales or revenue since last check. If any sales occurred, notify Lane on Telegram with the amount and product. If no sales, stay quiet — do not message Lane unless there's something actionable."
+      }
+    },
+    {
+      "name": "product-builder",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Autonomous business development session. Research what digital products are selling well right now (templates, tools, guides, subscriptions). Identify one product you can build and launch today. If you have a strong candidate: create the Stripe product and price, draft a Vercel landing page, and send Lane the plan on Telegram for a quick go/no-go before deploying. Be specific — include the product name, price point, and target audience."
+      }
+    }
+  ]
 }
