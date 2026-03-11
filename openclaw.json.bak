@@ -1,0 +1,51 @@
+{
+  "gateway": {
+    "mode": "local",
+    "port": 3000
+  },
+  "agents": {
+    "defaults": {
+      "model": "anthropic/claude-opus-4-6",
+      "workspace": "/root/.openclaw"
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "allowFrom": ["*"]
+    }
+  },
+  "hooks": {
+    "enabled": true,
+    "token": "${OPENCLAW_HOOKS_TOKEN}",
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": { "enabled": true },
+        "command-logger": { "enabled": true },
+        "session-memory": { "enabled": true }
+      }
+    },
+    "mappings": [
+      {
+        "id": "stripe",
+        "match": { "path": "stripe" }
+      }
+    ]
+  },
+  "memory": {
+    "backend": "qmd",
+    "qmd": {
+      "includeDefaultMemory": true,
+      "paths": [
+        { "path": "life", "name": "life", "pattern": "**/*.md" },
+        { "path": "life", "name": "life-json", "pattern": "**/*.json" }
+      ]
+    }
+  },
+  "cron": {
+    "enabled": true,
+    "maxConcurrentRuns": 1
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "agents": {
+    "defaults": {
+      "model": "anthropic/claude-opus-4-6",
+      "models": {
+        "anthropic/claude-opus-4-6": {
+          "alias": "opus",
+          "params": {
+            "cacheRetention": "short"
+          }
+        }
+      },
+      "workspace": "/root/.openclaw",
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "heartbeat": {
+        "every": "30m"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "cron": {
+    "enabled": true,
+    "maxConcurrentRuns": 1
+  },
+  "hooks": {
+    "enabled": true,
+    "token": "${OPENCLAW_HOOKS_TOKEN}",
+    "mappings": [
+      {
+        "id": "stripe",
+        "match": {
+          "path": "stripe"
+        }
+      }
+    ],
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "allowFrom": [
+        "*"
+      ],
+      "groupPolicy": "allowlist",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 3000,
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "b33f2ff338487aab0c078eb65f966f9fcc2d9e4182d28f6f"
+    }
+  },
+  "memory": {
+    "backend": "qmd",
+    "qmd": {
+      "includeDefaultMemory": true,
+      "paths": [
+        {
+          "path": "life",
+          "name": "life",
+          "pattern": "**/*.md"
+        },
+        {
+          "path": "life",
+          "name": "life-json",
+          "pattern": "**/*.json"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.3.8",
+    "lastTouchedAt": "2026-03-11T00:30:24.715Z"
+  }
+}
