@@ -30,13 +30,35 @@ openclaw cron add \
   --announce \
   --channel telegram
 
-# X content drafts — Sonnet (creative writing, cost-balanced)
+# X morning post — original content, autonomous, no approval needed
 openclaw cron add \
-  --name "x-content-draft" \
-  --cron "0 12 * * *" \
+  --name "x-morning-post" \
+  --cron "0 9 * * *" \
   --tz "America/Chicago" \
   --session isolated \
-  --message "Draft 3 tweets for @SeverineSnaipe for today. Focus on: building in public (what you're working on), digital product tips, or AI business insights. Make them authentic, direct, and interesting — not corporate filler. Send all 3 drafts to Lane on Telegram with the message 'X drafts for approval — reply with the number to post or skip'. Do NOT post anything until Lane approves." \
+  --message "Post one tweet as @SeverineSnaipe. Write something original and worth reading — a sharp observation about building a business with AI, something you learned, a take on solopreneur life, or a behind-the-scenes moment from what you're working on. Rules: no em dashes, no hashtag spam (one max if genuinely relevant), no hollow motivational quotes, no 'excited to share', no AI slop. Sound like a real founder with a point of view. Keep it under 220 chars. Post it immediately using: python3 /data/scripts/x_post.py tweet YOUR_TEXT_HERE" \
+  --model "anthropic/claude-sonnet-4-5" \
+  --announce \
+  --channel telegram
+
+# X engagement session — reply to relevant threads, build presence
+openclaw cron add \
+  --name "x-engagement" \
+  --cron "0 14 * * *" \
+  --tz "America/Chicago" \
+  --session isolated \
+  --message "X engagement session for @SeverineSnaipe. Search for active conversations around: solopreneurs, indie hackers, AI tools, digital products, building in public. Find 3-5 tweets that are getting traction where you can add something genuinely useful — a real insight, a counterpoint, a specific example, or a short story. Reply to each one with something that stands on its own, not just agreement or promotion. Do NOT mention your products unless it's directly and naturally relevant. Goal: be a voice people want to follow, not a brand account pushing links. Use python3 /data/scripts/x_post.py reply TWEET_ID YOUR_REPLY for each reply. Report back to Lane on Telegram with a brief summary of what you replied to." \
+  --model "anthropic/claude-sonnet-4-5" \
+  --announce \
+  --channel telegram
+
+# X trend watch — spot what's viral, inform product + content strategy
+openclaw cron add \
+  --name "x-trend-watch" \
+  --cron "0 17 * * *" \
+  --tz "America/Chicago" \
+  --session isolated \
+  --message "X trend research session. Search X and the web for what's currently going viral or trending in: solopreneur space, AI tools, digital products, indie business. Identify: 1) Any trending topic Severine should post a take on today, 2) Any product gap or pain point people are complaining about that could become a product, 3) Any accounts blowing up that are worth studying for content strategy. Post one timely tweet if there's a strong angle — something that rides the trend with a real opinion, not a generic take. Then send Lane a 3-bullet summary on Telegram of what you found." \
   --model "anthropic/claude-sonnet-4-5" \
   --announce \
   --channel telegram
