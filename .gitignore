@@ -13,7 +13,6 @@ telegram/
 *.bak
 *.png
 openclaw.json
-openclaw.config.json
 update-check.json
 node_modules/
 step*.png

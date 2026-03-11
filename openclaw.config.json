@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "name": "Severine",
+    "emoji": "💼"
+  },
+  "agents": {
+    "defaults": {
+      "model": "anthropic/claude-opus-4-6"
+    },
+    "list": [
+      {
+        "id": "main",
+        "model": "anthropic/claude-opus-4-6"
+      }
+    ]
+  },
+  "gateway": {
+    "auth": {
+      "token": "${OPENCLAW_AUTH_TOKEN}"
+    }
+  },
+  "memory": {
+    "backend": "file"
+  },
+  "hooks": {
+    "enabled": true,
+    "token": "${HOOKS_TOKEN}"
+  },
+  "tools": {
+    "shell": {
+      "enabled": true
+    },
+    "web": {
+      "enabled": true
+    },
+    "files": {
+      "enabled": true
+    },
+    "browser": {
+      "enabled": false
+    }
+  },
+  "channels": {
+    "telegram": {
+      "token": "${TELEGRAM_BOT_TOKEN}",
+      "dmPolicy": "open",
+      "allowFrom": "*"
+    }
+  }
+}
