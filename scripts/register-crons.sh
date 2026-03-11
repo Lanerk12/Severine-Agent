@@ -19,14 +19,14 @@ openclaw cron add \
   --announce \
   --channel telegram
 
-# Product builder — Opus (creative + strategic work)
+# Product builder — Sonnet (cost-efficient, fully capable for research + drafting)
 openclaw cron add \
   --name "product-builder" \
   --cron "0 10 * * *" \
   --tz "America/Chicago" \
   --session isolated \
   --message "Autonomous business development session. Research what digital products are selling well right now (templates, tools, guides, subscriptions). Identify one product you can build and launch today. If you have a strong candidate: create the Stripe product and price, draft a Vercel landing page, and send Lane the plan on Telegram for a quick go/no-go before deploying. Be specific — include the product name, price point, and target audience." \
-  --model "anthropic/claude-opus-4-6" \
+  --model "anthropic/claude-sonnet-4-5" \
   --announce \
   --channel telegram
 
