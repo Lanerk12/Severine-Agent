@@ -1,0 +1,29 @@
+# OpenClaw system files (do not commit)
+agents/
+canvas/
+cron/
+devices/
+identity/
+logs/
+telegram/
+openclaw.json
+openclaw.json.bak*
+update-check.json
+
+# Memory database (too large, only commit .md files)
+memory/*.sqlite
+memory/**/*.sqlite
+
+# Keep memory markdown files
+!memory/*.md
+!memory/**/*.md
+
+# Keep core memory file
+!MEMORY.md
+
+# Keep project context files
+!AGENTS.md
+!IDENTITY.md
+!SOUL.md
+!TOOLS.md
+!USER.md

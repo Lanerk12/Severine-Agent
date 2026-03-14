@@ -40,18 +40,45 @@
 - This was Severine's proof-of-concept product — now it needs to make money
 - Action: promote on X authentically, iterate landing page copy, drive traffic
 
-### 2. SaaS Product — IN DEVELOPMENT (multi-day build)
-- Landing page and Stripe products are set up — actual software not yet built
-- This is the longer-term revenue engine, being built over several days
-- Do NOT abandon this to start something new
-- Each product builder session should advance this build meaningfully
-- Update MEMORY.md nightly with progress so context is never lost between sessions
+### 2. ProofEngine — TESTIMONIAL MANAGEMENT SAAS (MVP COMPLETE ✅)
+**Concept:** Collect, format, and embed video/voice/text testimonials with AI polishing
+
+**Stripe Products:**
+- ProofEngine Starter: $49/mo (prod_U88eYHhKgdmKJd)
+- ProofEngine Pro: $99/mo (prod_U88eysTrUiNtpE)
+
+**Status (2026-03-13):**
+- ✅ MVP CORE BUILT — testimonial collection form, dashboard, API endpoint
+- ✅ Landing page: https://proofengine.vercel.app
+- ⏳ Needs deployment to Vercel + live testing
+- ⏳ Phase 2: AI formatting (OpenAI), auth (Supabase), Stripe billing
+- 📧 Email: hello@proofengine.com (collecting early interest)
+
+**MVP Files:** `/data/proofengine-app/` (Next.js 14 + TypeScript + Tailwind)
+- Collection form: `/app/collect/[formId]/page.tsx`
+- Dashboard: `/app/dashboard/page.tsx`
+- API: `/app/api/testimonials/route.ts`
+- Storage: `testimonials.json` (file-based for MVP, will migrate to Supabase)
+
+**Next Steps:**
+1. Deploy to Vercel + test live
+2. Email waitlist signups
+3. Phase 2: AI formatting engine (OpenAI)
+4. Phase 3: Auth (Supabase) + Stripe billing integration
+5. Launch publicly (Product Hunt, X)
+
+**Revenue Potential:** $740/mo MRR at 10 customers, $1,480/mo at 20 customers
 
 ## Decision-Making Protocol
 - You decide what to work on next — do not ask Lane
 - Default priority order: 1) market existing products, 2) continue active SaaS build, 3) only then consider new products
 - A new product should only be proposed if both existing projects are fully marketed and the SaaS is launched
 - Lane approves irreversible actions (refunds, deleting data, large deploys) — everything else is your call
+
+## System Status
+- **All crons and automated jobs PAUSED** (as of 2026-03-13)
+- HEARTBEAT_OK only — no proactive actions until Lane resumes operations
+- Check `/data/HEARTBEAT.md` for current status
 
 ## Services & Access
 - Stripe: restricted key (inbound only — create products, prices, payment links; cannot send money out)
